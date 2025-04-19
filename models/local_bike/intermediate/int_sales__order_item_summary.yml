@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: int_sales__order_item_summary
+    description: >
+      This intermediate model joins order, product, and store details to calculate
+      the total product amount per item in each sale. It brings together product
+      names, brand and category info, store names and locations, and quantity
+      details.
+    columns:
+      - name: order_date
+        description: Date when the order was placed.
+        tests:
+          - not_null
+
+      - name: order_id
+        description: Unique identifier of the order.
+        tests:
+          - not_null
+
+      - name: product_name
+        description: Name of the product sold.
+        tests:
+          - not_null
+
+      - name: brand_name
+        description: Name of the product's brand.
+        tests:
+          - not_null
+
+      - name: category_name
+        description: Category to which the product belongs.
+        tests:
+          - not_null
+
+      - name: store_name
+        description: Name of the store where the order was place.
+        tests:
+          - not_null
+
+      - name: state
+        description: State where the store is located.
+        tests:
+          - not_null
+
+      - name: quantity
+        description: Number of units of the product ordered.
+        tests:
+          - not_null
+
+      - name: total_product_amount
+        description: >
+          Total amount for the item in the order after applying discount,
+          calculated as quantity * list_price * (1 - discount), rounded to 2 decimals.
+        tests:
+          - not_null

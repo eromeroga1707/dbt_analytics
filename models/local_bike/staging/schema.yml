@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: stg_production__brands
+    description: "Brands catalog"
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each branch"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_production__categories
+    description: "Categories definition"
+    columns:
+      - name: category_id
+        description: "Primary key, unique identifier for each category"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_production__products
+    description: "Products catalog including prices and categories"
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_sales__customers
+    description: "Customer database"
+    columns:
+      - name: user_id
+        description: "Primary key, unique identifier for each customer"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_sales__orders
+    description: "Orders database"
+    columns:
+      - name: order_id
+        description: "Primary key, unique identifier for each order"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_sales__staffs
+    description: "Employees database"
+    columns:
+      - name: staff_id
+        description: "Primary key, unique identifier for each staff member"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_sales__stores
+    description: "Stores database"
+    columns:
+      - name: store_id
+        description: "Primary key, unique identifier for each store"
+        tests:
+          - not_null
+          - unique
+

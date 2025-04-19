@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: mrrt_sales__monthly_category_summary
+    description: >
+      Monthly sales summary by product category and state, including total sales,
+      number of orders, and quantity sold. Useful for category-level sales trend analysis.
+    columns:
+      - name: sales_month
+        description: Month of the sale, formatted as YYYY-MM.
+      - name: state
+        description: State where the sale were placed.
+      - name: category_name
+        description: Product category of the items sold.
+      - name: total_sales_amount
+        description: Total sales amount (in USD) for the given category and state during the month.
+        tests:
+          - not_null
+      - name: total_orders
+        description: Total number of distinct orders for the category and state in that month.
+        tests:
+          - not_null
+      - name: total_products
+        description: Total quantity of products sold in that category and state during the month.
+        tests:
+          - not_null

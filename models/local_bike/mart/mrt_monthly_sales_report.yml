@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: mrt_monthly_sales_report
+    description: >
+      Reporting-level model that provides aggregated monthly sales performance by state.
+      Includes total sales, order count, customer count, and average order value.
+    columns:
+      - name: sales_month
+        description: The year and month (YYYY-MM) of the sale.
+        tests:
+          - not_null
+
+      - name: state
+        description: State where the orders were placed.
+        tests:
+          - not_null
+
+      - name: total_sales_amount
+        description: Total sales revenue for the given month and state.
+        tests:
+          - not_null
+
+      - name: total_orders
+        description: Number of unique orders placed in the given month and state.
+        tests:
+          - not_null
+
+      - name: total_customers
+        description: Number of unique customers who placed orders in the given month and state.
+        tests:
+          - not_null
+
+      - name: avg_order_amount
+        description: Average order value (total_sales_amount divided by total_orders).

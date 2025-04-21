@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: int_sales__order_summary
+    description: >
+      This intermediate model aggregates order-level sales data by combining order items,
+      stores, customers, and staff information. It calculates the total order amount
+      and provides store, customer, and salesperson details for each order.
+    columns:
+      - name: order_id
+        description: Unique identifier for each order.
+        tests:
+          - not_null
+          - unique
+
+      - name: order_date
+        description: Date when the order was placed.
+        tests:
+          - not_null
+
+      - name: total_order_amount
+        description: >
+          Total monetary amount of the order after discounts, calculated by
+          summing all associated order items.
+        tests:
+          - not_null
+
+      - name: store_name
+        description: Name of the store where the order was placed.
+        tests:
+          - not_null
+
+      - name: state
+        description: State where the store is located.
+        tests:
+          - not_null
+
+      - name: customer_name
+        description: Full name of the customer who placed the order.
+        tests:
+          - not_null
+
+      - name: staff_name
+        description: Name of the sales staff associated with the order.
+        tests:
+          - not_null

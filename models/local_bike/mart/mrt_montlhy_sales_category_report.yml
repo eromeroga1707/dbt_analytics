@@ -16,10 +16,6 @@ models:
         description: Total sales amount (in USD) for the given category and state during the month.
         tests:
           - not_null
-      - name: total_orders
-        description: Total number of distinct orders for the category and state in that month.
-        tests:
-          - not_null
       - name: total_products
         description: Total quantity of products sold in that category and state during the month.
         tests:

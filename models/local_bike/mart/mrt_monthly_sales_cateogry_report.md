@@ -8,7 +8,6 @@ This model performs the following:
 
 - Aggregates data by sales month (`YYYY-MM`), state, and product category.
 - Sums total sales amount.
-- Counts the number of distinct orders.
 - Sums total quantity of products sold.
 
 ## Use Cases

@@ -31,7 +31,7 @@ models:
   - name: stg_sales__customers
     description: "Customer database"
     columns:
-      - name: user_id
+      - name: customer_id
         description: "Primary key, unique identifier for each customer"
         tests:
           - not_null

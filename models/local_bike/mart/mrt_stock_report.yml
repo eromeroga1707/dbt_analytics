@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: mrt_stock_report
+    description: >
+      Consolidated inventory report by store and product. Displays the quantity of products available in each store, along with the product name, brand, and category.
+    columns:
+      - name: store_name
+        description: Name of the store.
+        tests:
+          - not_null
+
+      - name: state
+        description: State where the store is located.
+        tests:
+          - not_null
+
+      - name: product_name
+        description: Name of the product.
+        tests:
+          - not_null
+
+      - name: brand_name
+        description: Name of the product's brand.
+        tests:
+          - not_null
+
+      - name: category_name
+        description: Name of the product's category.
+        tests:
+          - not_null
+
+      - name: quantity
+        description: Number of units available for the product in the store.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5, 10, 50, 100]  # Adjust these values as needed
+              quote: false
+              config:
+                severity: warn

@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: mrt_sales_staff_ranking
+    description: >
+      Ranking of sales staff by city (state), based on the total sales amount.
+      This model aggregates total sales per staff member per city and assigns a rank
+      based on sales volume within each city.
+
+    columns:
+      - name: staff_name
+        description: Full name of the staff member.
+      - name: state
+        description: State in which the store is located.
+      - name: total_sales
+        description: Total amount sold by the staff member in that state.
+      - name: staff_rank
+        description: Rank of the staff member within the state based on total sales.
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: ['staff_name', 'state']

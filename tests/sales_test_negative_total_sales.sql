@@ -1,5 +1,3 @@
 SELECT *
-FROM {{ ref('mrt_monthly_sales_summary') }}
+FROM {{ ref('mrt_montlhy_sales_report') }}
 WHERE total_sales_amount < 0
-   OR total_orders < 0
-   OR total_customers < 0

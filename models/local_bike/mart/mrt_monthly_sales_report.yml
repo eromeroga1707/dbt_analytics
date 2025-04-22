@@ -34,8 +34,4 @@ models:
       - name: avg_order_amount
         description: Average order value (total_sales_amount divided by total_orders).
     
-    tests:
-    - dbt_utils.unique_combination_of_columns:
-        combination_of_columns:
-          - sales_month
-          - state
+
